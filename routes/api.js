@@ -12,6 +12,7 @@ module.exports = function(app) {
     app.post(`/api/notes`, function(req, res) {
         console.log(req.body)
         db.push(req.body); 
+        console.log(__dirname)
         fs.readFile(path.join(__dirname, "../db/db.json"), function(err, data) {
             if (err) throw err
             const userInput = JSON.parse(data)
